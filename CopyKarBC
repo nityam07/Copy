@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int i, j, len, row, col;
+
+    printf("Enter a search string: ");
+    scanf("%s", str);
+
+    len = strlen(str);
+    row = 0;
+    col = 0;
+
+    printf("The search string in A-Z alphabet:\n");
+
+    for (i = 0; i < len; i++) {
+        for (j = 0; j < 26; j++) {
+            if (str[i] == 'A' + j) {
+                while (row > j / 5) {
+                    printf("up ");
+                    row--;
+                }
+                while (row < j / 5) {
+                    printf("down ");
+                    row++;
+                }
+                while (col > j % 5) {
+                    printf("left ");
+                    col--;
+                }
+                while (col < j % 5) {
+                    printf("right ");
+                    col++;
+                }
+                printf("OK ");
+                break;
+            }
+            else if (str[i] == 'a' + j) {
+                while (row > j / 5) {
+                    printf("up ");
+                    row--;
+                }
+                while (row < j / 5) {
+                    printf("down ");
+                    row++;
+                }
+                while (col > j % 5) {
+                    printf("left ");
+                    col--;
+                }
+                while (col < j % 5) {
+                    printf("right ");
+                    col++;
+                }
+                printf("shift OK ");
+                break;
+            }
+        }
+    }
+
+    return 0;
+}
