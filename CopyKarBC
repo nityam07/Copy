@@ -18,44 +18,44 @@ int main() {
         for (j = 0; j < 26; j++) {
             if (str[i] == 'A' + j) {
                 while (row > j / 5) {
-                    printf("up ");
+                    printf("up\n");
                     row--;
                 }
                 while (row < j / 5) {
-                    printf("down ");
+                    printf("down\n");
                     row++;
                 }
                 while (col > j % 5) {
-                    printf("left ");
+                    printf("left\n");
                     col--;
                 }
                 while (col < j % 5) {
-                    printf("right ");
+                    printf("right\n");
                     col++;
                 }
-                printf("OK ");
+                printf("OK\n");
                 break;
             }
-            else if (str[i] == 'a' + j) {
-                while (row > j / 5) {
-                    printf("up ");
-                    row--;
-                }
-                while (row < j / 5) {
-                    printf("down ");
-                    row++;
-                }
-                while (col > j % 5) {
-                    printf("left ");
-                    col--;
-                }
-                while (col < j % 5) {
-                    printf("right ");
-                    col++;
-                }
-                printf("shift OK ");
-                break;
+        }
+        if (j == 26) {
+            int reciprocal = 'Z' - str[i] + 'A';
+            while (row > reciprocal / 5) {
+                printf("up\n");
+                row--;
             }
+            while (row < reciprocal / 5) {
+                printf("down\n");
+                row++;
+            }
+            while (col > reciprocal % 5) {
+                printf("left\n");
+                col--;
+            }
+            while (col < reciprocal % 5) {
+                printf("right\n");
+                col++;
+            }
+            printf("OK\n");
         }
     }
 
